@@ -14,7 +14,7 @@ body{
 .slide{
     width: 100%;
     min-height: 100vh;
-    background-color: #001d4b;
+    background-color: transparent;
 }
 
 .wrapper{
@@ -239,11 +239,15 @@ header{
 //footer
 
 footer{
+    position: relative;
     min-height: 200px;
     width: 100%;
-    background-color: black;
+    .fondu{
+        position: relative;
+    }
     //première partie du footer
     .footerMenu{
+        background-color: black;
         height: 140px;
         width: 100%;
         font-size: 16px;
@@ -305,6 +309,7 @@ footer{
     }
     //seconde partie du footer
     .copy{
+        background-color: black;
         height: 60px;
         border-top: solid 1px white;
 
@@ -343,5 +348,65 @@ footer{
                 }
             }
         }
+    }
+}
+
+//slide de background
+
+.bg{
+    background-image: url(../../images/starRotation2.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: fixed;
+    z-index: -1;
+    background-color: #001d4b;
+
+    img{
+        width: 20%;
+        position: absolute;
+        transition: all 0.4s;
+        transition-timing-function: ease-in-out;
+    }
+
+    .taki, .chi{
+        bottom: 0;
+        left: 0;
+    }
+
+    .mitsu{
+        bottom: 0;
+        right: 0;
+    }
+
+    .chi{
+        transform: translate(-100%,50%);
+    }
+
+    .sho{
+        width: 15%;
+        top: 50%;
+        right: 0;
+        transform: translate(100%, -45%);
+    }
+
+}
+
+
+.fondu{
+    background: linear-gradient(transparent, black);
+    height: 125px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+
+    @media all and (max-width: 1024px){
+        height: 100px;
+    }
+    @media all and (max-width: 960px){
+        height: 80px;
+    }
+    @media all and (max-width: 450px){
+        height: 50px;
     }
 }
