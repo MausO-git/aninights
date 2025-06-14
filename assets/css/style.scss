@@ -24,23 +24,28 @@ body{
 //header
 
 header{
+    position: fixed;
     width: 100%;
     height: 60px;
     background-color: black;
     font-size: 20px;
+    z-index: 100;
     
     
     .wrapper{
         height: 100%;
         width: 90%;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
+        z-index: 100;
 
         #logo{
             width: 160px;
             height: 100%;
-            display: flex;
-            justify-content: center;
+            // display: flex;
+            // justify-content: center;
             align-items: center;
             background-image: url(../../images/logo.png);
             background-size: cover;
@@ -100,19 +105,135 @@ header{
                     }
                 }
             }
+
+            @media all and (max-width: 1024px){
+                display: none;
+            }
         }
+
+        .socialNetwork{
+            display: flex;
+            gap: 20px;
+            height: 100%;
+            align-items: center;
+            svg{
+                height: 20px;
+                fill: white;
+            }
+
+            @media all and (max-width: 550px){
+                    display: none;
+            }
+        }
+        //menu burger
+        #burger{
+            position: relative;
+            /* top: 10%; */
+            // right: 50px;
+            height: 30px;
+            width: 50px;
+            /* background-color: red; */
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.5s;
+
+            @media all and (max-width: 1024px){
+                display: flex;
+            }
+
+            .bar{
+                background-color: white;
+                height: 3px;
+                width: 100%;
+                transition: all 0.3s;
+            }
+            //composantes d'animation du menu burger
+            .disp{
+                background-color: transparent;
+            }
+            .rotup{
+                position: absolute;
+                transform-origin: center;
+                transform: rotate(-45deg);
+            }
+            .rotd{
+                position: absolute;
+                transform-origin: center;
+                transform: rotate(45deg);
+            }
+        }
+    }
+    //menu arrivant suite au click
+    #menub{
+        position: fixed;
+        top: 60px;
+        left: 0;
+        height: calc(100vh - 60px);
+        width: 100%;
+        background-color: black;
+        transform: translate(-100%,0);
+        transition: all 0.3s;
+        z-index: 90;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .menu{
+            font-size: 28px;
+            font-weight: bold;
+            height: 216px;
+            width: 100%;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transform: translate(0, -30px);
+
+            @media all and (max-width: 550px) {
+                font-size: 16px;
+            }
+            
+
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        .socialNetworkBurg{
+            position: absolute;
+            bottom: 50px;
+            display: none;
+            @media all and (max-width: 550px) {
+                display: flex;
+            }
+
+            gap: 20px;
+            align-items: center;
+            svg{
+                height: 20px;
+                fill: white;
+            }
+        }
+    }
+}
+
+.open{
+    #burger{
+        // gap: 0px;
+        width: 50px;
     }
 
-    .socialNetwork{
-        display: flex;
-        gap: 20px;
-        height: 100%;
-        align-items: center;
-        svg{
-            height: 20px;
-            fill: white;
-        }
+    #menub{
+        transform: translate(0,0);
     }
+
+
 }
 
 //footer
