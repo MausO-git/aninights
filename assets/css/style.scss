@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Russo+One&display=swap');
 
+//variables et extensions
+
+$textBorder: 0 0 10px black;
+$bgc: #001433;
+$yellow: #FFD267;
+$roboto: "Roboto", sans-serif;
+$russo: "Russo One", sans-serif;
+$white: white;
+%flex-column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -7,8 +22,8 @@
 }
 
 body{
-    font-family: "Roboto", sans-serif;
-    color: white;
+    font-family: $roboto;
+    color: $white;
 }
 
 .slide{
@@ -21,11 +36,7 @@ body{
     margin: 0 auto;
 }
 
-//variables et extensions
 
-$textBorder: 0 0 1px black;
-$bgc: #001433;
-$yellow: #FFD267;
 
 //header
 
@@ -73,7 +84,7 @@ header{
                     width: calc(100%/3);
                     position: relative;
                     a{
-                        color: white;
+                        color: $white;
                         text-decoration: none;
                         margin: auto;
                         display: flex;
@@ -124,7 +135,7 @@ header{
             align-items: center;
             svg{
                 height: 20px;
-                fill: white;
+                fill: $white;
             }
 
             @media all and (max-width: 550px){
@@ -152,7 +163,7 @@ header{
             }
 
             .bar{
-                background-color: white;
+                background-color: $white;
                 height: 3px;
                 width: 100%;
                 transition: all 0.3s;
@@ -207,7 +218,7 @@ header{
 
             a{
                 text-decoration: none;
-                color: white;
+                color: $white;
             }
         }
 
@@ -222,7 +233,7 @@ header{
             }
             svg{
                 height: 20px;
-                fill: white;
+                fill: $white;
             }
         }
     }
@@ -293,7 +304,7 @@ footer{
 
                 a{
                     text-decoration: none;
-                    color: white;
+                    color: $white;
                 }
 
             }
@@ -302,7 +313,7 @@ footer{
                 gap: 20px;
                 svg{
                     height: 20px;
-                    fill: white;
+                    fill: $white;
 
                     @media all and (max-width: 960px){
                         height: 28px;
@@ -316,7 +327,7 @@ footer{
     .copy{
         background-color: black;
         height: 60px;
-        border-top: solid 1px white;
+        border-top: solid 1px $white;
 
         .wrapper{
             width: 90%;
@@ -338,7 +349,7 @@ footer{
                 text-align: center;
                 a{
                     text-decoration: none;
-                    color: white;
+                    color: $white;
     
                     &:hover{
                         text-decoration: underline;
@@ -374,6 +385,19 @@ footer{
         position: absolute;
         transition: all 0.4s;
         transition-timing-function: ease-in-out;
+        &.taki, &.mitsu{
+            @media all and (max-width: 950px){
+                width: 30%;
+            }
+            @media all and (max-width: 460px){
+                width: 40%;
+            }
+        }
+        &.chi, &.sho{
+            @media all and (max-width: 460px){
+                display: none;
+            }
+        }
     }
 
     .taki, .chi{
@@ -420,89 +444,259 @@ footer{
 }
 
 //contenu de la page home
-%flex-column{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
+@keyframes goMiddle {
+    0%{
+        transform: translate(0,-80vh);
+    }
+    100%{
+        transform: translate(0, 0);
+    }
 }
-.text{
-    font-family: "Russo One", sans-serif;
-    width: 60%;
-    padding-top: 180px;
-    @media all and (max-height:810px){
-        padding-top: 90px;
-    }
-    // @media all and (max-height:700px){
-    //     padding-top: 70px;
-    // }
-    @media all and (max-width: 46px){
-        padding-top: 100px;
-    }
-    @extend %flex-column;
 
-    .fest{
-        color: #FFD267;
-        @extend %flex-column;
-        text-shadow: $textBorder;
-        margin-bottom: 30px;
-        text-align: center;
-        
-        h4{
-            font-size: 24px;
+.content{
+    .text{
+        font-family: $russo;
+        width: 60%;
+        padding-top: 180px;
+        transform: translate(0,-80vh);
+        animation-name: goMiddle;
+        animation-delay: 1s;
+        animation-duration: 1.65s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-out;
+        @media all and (max-height:810px){
+            padding-top: 90px;
         }
-        h1{
-            font-size: 48px;
-            @media all and (max-width: 1130px){
-                font-size: 40px;
+        @media all and (max-width: 950px){
+            width: 80%;
+        }
+        @media all and (max-width: 550px){
+            width: 90%;
+        }
+        @media all and (max-width: 460px){
+            width: 100%;
+        }
+        // @media all and (max-height:700px){
+        //     padding-top: 70px;
+        // }
+        @media all and (max-width: 46px){
+            padding-top: 100px;
+        }
+        @extend %flex-column;
+    
+        .fest{
+            color: $yellow;
+            @extend %flex-column;
+            text-shadow: $textBorder;
+            margin-bottom: 30px;
+            text-align: center;
+            @media all and (max-width: 460px){
+                margin-bottom: 110px;
+            }
+            
+            h4{
+                font-size: 24px;
+                @media all and (max-width: 950px){
+                    font-size: 22px;
+                }
+                @media all and (max-width: 900px){
+                    font-size: 18px;
+                }
+                @media all and (max-width: 460px){
+                    font-size: 16px;
+                }
+            }
+            h1{
+                font-size: 48px;
+                @media all and (max-width: 1130px){
+                    font-size: 40px;
+                }
+                @media all and (max-width: 950px){
+                    font-size: 38px;
+                }
+                @media all and (max-width: 900px){
+                    font-size: 30px;
+                }
+                @media all and (max-width: 460px){
+                    font-size: 24px;
+                }
+    
+            }
+            h3{
+                font-size: 26px;
+                @media all and (max-width: 950px){
+                    font-size: 24px;
+                }
+                @media all and (max-width: 900px){
+                    font-size: 20px;
+                }
+                @media all and (max-width: 460px){
+                    font-size: 18px;
+                }
             }
         }
-        h3{
-            font-size: 26px;
+        @keyframes apparition {
+            0%{
+            opacity: 0;  
+            }
+            100%{
+                opacity: 1;
+            }
         }
-    }
-    img{
-        width: 45%;
-        margin-bottom: 45px;
-        @media all and (max-width: 1130px){
-            width: 55%;
-        }
-        @media all and (max-height:700px){
+        img{
             width: 45%;
+            margin-bottom: 45px;
+            opacity: 0;
+            animation-name: apparition;
+            animation-delay: 2.65s;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            @media all and (max-width: 1130px){
+                width: 55%;
+            }
+            @media all and (max-width:950px){
+                width: 70%;
+                margin-bottom: 60px;
+            }
+            @media all and (max-width: 460px){
+                width: 60%;
+                margin-bottom: 30px;
+            }
+            @media all and (max-width:375px){
+                width: 70%;
+            }
+            // @media all and (max-height:700px){
+            //     width: 45%;
+            // }
+        }
+        .date{
+            font-size: 40px;
+            line-height: 50px;
+            color: $yellow;
+            text-shadow: $textBorder;
+            filter: drop-shadow(0 0 3px $yellow);
+            @media all and (max-width: 950px){
+                font-size: 36px;
+                line-height: 40px;
+            }
+            @media all and (max-width: 900px){
+                font-size: 28px;
+                line-height: 32px;
+            }
+            @media all and (max-width: 460px){
+                font-size: 22px;
+                line-height: 26px;
+                margin-bottom: 30px;
+            }
+        }
+        .countdowns{
+            @extend %flex-column;
+            margin-bottom: 50px;
+            @media all and (max-width: 1130px){
+                margin-bottom: 20px;
+            }
+            @media all and (max-width: 950px){
+                margin-bottom: 30px;
+            }
+            
+    
+            h4{
+                font-size: 20px;
+                text-align: center;
+                &.none{
+                    display: none;
+                }
+                @media all and (max-width: 950px){
+                    font-size: 18px;
+                }
+                @media all and (max-width: 900px){
+                    font-size: 16px;
+                }
+                @media all and (max-width: 460px){
+                    font-size: 14px;
+                }
+            }
+            .countdown{
+                font-size: 26px;
+            }
+        }
+        .btn{
+            background-color: black;
+            padding: 10px 30px;
+            border-radius: 30px;
+            outline: 0.5px solid $yellow;
+            display: block;
+            text-decoration: none;
+            color: $yellow;
+            font-family: $roboto;
+            font-weight: bold;
+            font-size: 24px;
+            @media all and (max-width: 950px){
+                font-size: 22px;
+            }
+            @media all and (max-width: 460px){
+                font-size: 20px;
+                padding: 5px 15px;
+            }
         }
     }
-    .date{
-        font-size: 40px;
-        line-height: 50px;
-        color: $yellow;
-        text-shadow: $textBorder;
-        filter: drop-shadow(0 0 3px $yellow);
-    }
-    .countdowns{
-        @extend %flex-column;
-        margin-bottom: 50px;
-        @media all and (max-width: 1130px){
-            margin-bottom: 20px;
-        }
+}
 
-        h4{
-            font-size: 20px;
+//paruie info de la page home
+#infos{
+    .info{
+        width: 60%;
+        background-color: rgba(44, 111, 199, 0.4);
+        padding: 10px  10px 15px;
+        margin-top: 150px;
+        text-shadow: $textBorder;
+        h1{
+            font-family: $russo;
+            width: 100%;
             text-align: center;
+            font-size: 48px;
+            line-height: 58px;
+            filter: drop-shadow(0 0 3px $white);
         }
-        .countdown{
-            font-size: 26px;
+        .card{
+            display: flex;
+            .space{
+                width: 100px;
+                @extend %flex-column;
+                svg{
+                    fill: $white;
+                    height: 44px;
+                //     stroke-width: 1px;
+                //     stroke: black;
+                }
+            }
+            .text{
+                width: calc(100% - 200px);
+                margin-bottom: 45px;
+                h2{
+                    font-family: $russo;
+                    font-size: 40px;
+                    line-height: 44px;
+                    margin-bottom: 30px;
+                }
+                p{
+                    color: $yellow;
+                    font-size: 28px;
+                    &.ou{
+                        margin-bottom: 1em;
+                    }
+                }
+                &.der{
+                    margin-bottom: 0
+                }
+            }
         }
-    }
-    .btn{
-        background-color: black;
-        font-size: 24px;
-        padding: 10px 30px;
-        border-radius: 30px;
-        outline: 0.5px solid $yellow;
-        display: block;
-        text-decoration: none;
-        color: $yellow;
-        font-family: "Roboto", sans-serif;
-        font-weight: bold;
+        .trait{
+            height: 1px;
+            width: 100%;
+            margin-bottom: 45px;
+            background-color: $white;
+        }
     }
 }
