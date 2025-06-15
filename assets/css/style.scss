@@ -429,8 +429,14 @@ footer{
 .text{
     font-family: "Russo One", sans-serif;
     width: 60%;
-    padding-top: 120px;
-    @media all and (max-width: 1440px){
+    padding-top: 180px;
+    @media all and (max-height:810px){
+        padding-top: 90px;
+    }
+    // @media all and (max-height:700px){
+    //     padding-top: 70px;
+    // }
+    @media all and (max-width: 46px){
         padding-top: 100px;
     }
     @extend %flex-column;
@@ -461,6 +467,9 @@ footer{
         @media all and (max-width: 1130px){
             width: 55%;
         }
+        @media all and (max-height:700px){
+            width: 45%;
+        }
     }
     .date{
         font-size: 40px;
@@ -471,7 +480,11 @@ footer{
     }
     .countdowns{
         @extend %flex-column;
-        margin-bottom: 40px;
+        margin-bottom: 50px;
+        @media all and (max-width: 1130px){
+            margin-bottom: 20px;
+        }
+
         h4{
             font-size: 20px;
             text-align: center;
@@ -483,15 +496,13 @@ footer{
     .btn{
         background-color: black;
         font-size: 24px;
-        padding: 10px 15px;
+        padding: 10px 30px;
         border-radius: 30px;
         outline: 0.5px solid $yellow;
-        
-        a{
-            text-decoration: none;
-            color: $yellow;
-            font-family: "Roboto", sans-serif;
-            font-weight: bold;
-        }
+        display: block;
+        text-decoration: none;
+        color: $yellow;
+        font-family: "Roboto", sans-serif;
+        font-weight: bold;
     }
 }
