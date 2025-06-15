@@ -21,6 +21,12 @@ body{
     margin: 0 auto;
 }
 
+//variables et extensions
+
+$textBorder: 0 0 1px black;
+$bgc: #001433;
+$yellow: #FFD267;
+
 //header
 
 header{
@@ -79,7 +85,7 @@ header{
 
                         &:hover{
                             background-color: #3F3F3F;
-                            color: #FFD267;
+                            color: $yellow;
                         }
 
                     }
@@ -209,12 +215,11 @@ header{
             position: absolute;
             bottom: 50px;
             display: none;
+            gap: 20px;
+            align-items: center;
             @media all and (max-width: 550px) {
                 display: flex;
             }
-
-            gap: 20px;
-            align-items: center;
             svg{
                 height: 20px;
                 fill: white;
@@ -351,7 +356,9 @@ footer{
     }
 }
 
-//slide de background
+
+//page home
+//slide de background de la page home
 
 .bg{
     background-image: url(../../images/starRotation2.jpg);
@@ -359,7 +366,8 @@ footer{
     background-position: center center;
     position: fixed;
     z-index: -1;
-    background-color: #001d4b;
+    background-color: $bgc;
+    overflow: hidden;
 
     img{
         width: 20%;
@@ -391,14 +399,14 @@ footer{
 
 }
 
-
+//reglage du dégradé au bas de la page home
 .fondu{
     background: linear-gradient(transparent, black);
     height: 125px;
     width: 100%;
     position: absolute;
     bottom: 0;
-    z-index: 100;
+    z-index: 200;
 
     @media all and (max-width: 1024px){
         height: 100px;
@@ -408,5 +416,82 @@ footer{
     }
     @media all and (max-width: 450px){
         height: 50px;
+    }
+}
+
+//contenu de la page home
+%flex-column{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.text{
+    font-family: "Russo One", sans-serif;
+    width: 60%;
+    padding-top: 120px;
+    @media all and (max-width: 1440px){
+        padding-top: 100px;
+    }
+    @extend %flex-column;
+
+    .fest{
+        color: #FFD267;
+        @extend %flex-column;
+        text-shadow: $textBorder;
+        margin-bottom: 30px;
+        text-align: center;
+        
+        h4{
+            font-size: 24px;
+        }
+        h1{
+            font-size: 48px;
+            @media all and (max-width: 1130px){
+                font-size: 40px;
+            }
+        }
+        h3{
+            font-size: 26px;
+        }
+    }
+    img{
+        width: 45%;
+        margin-bottom: 45px;
+        @media all and (max-width: 1130px){
+            width: 55%;
+        }
+    }
+    .date{
+        font-size: 40px;
+        line-height: 50px;
+        color: $yellow;
+        text-shadow: $textBorder;
+        filter: drop-shadow(0 0 3px $yellow);
+    }
+    .countdowns{
+        @extend %flex-column;
+        margin-bottom: 40px;
+        h4{
+            font-size: 20px;
+            text-align: center;
+        }
+        .countdown{
+            font-size: 26px;
+        }
+    }
+    .btn{
+        background-color: black;
+        font-size: 24px;
+        padding: 10px 15px;
+        border-radius: 30px;
+        outline: 0.5px solid $yellow;
+        
+        a{
+            text-decoration: none;
+            color: $yellow;
+            font-family: "Roboto", sans-serif;
+            font-weight: bold;
+        }
     }
 }
