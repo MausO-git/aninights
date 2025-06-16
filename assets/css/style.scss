@@ -651,6 +651,12 @@ footer{
         padding: 10px  10px 15px;
         margin-top: 150px;
         text-shadow: $textBorder;
+        @media all and (max-width: 765px) {
+            width: 70%;
+        }
+        @media all and (max-width: 450px){
+            width: 90%;
+        }
         h1{
             font-family: $russo;
             width: 100%;
@@ -658,31 +664,83 @@ footer{
             font-size: 48px;
             line-height: 58px;
             filter: drop-shadow(0 0 3px $white);
+            @media all and (max-width: 1024px){
+                font-size: 44px;
+                line-height: 54px;
+                margin-bottom: 10px;
+            }
+            @media all and (max-width: 765px) {
+                font-size: 40px;
+            }
+            @media all and (max-width: 450px){
+                font-size: 36px;
+                line-height: 43px;
+                margin-bottom: 20px;
+            }
         }
         .card{
             display: flex;
             .space{
                 width: 100px;
                 @extend %flex-column;
+                @media all and (max-width: 1024px){
+                    width: 80px;
+                }
+                @media all and (max-width: 450px){
+                    width: 50px;
+                }
                 svg{
                     fill: $white;
                     height: 44px;
-                //     stroke-width: 1px;
-                //     stroke: black;
+                    @media all and (max-width: 1024px){
+                        height: 39px;
+                    }
+                    @media all and (max-width: 450px){
+                        height: 36px;
+                    }
                 }
             }
             .text{
                 width: calc(100% - 200px);
                 margin-bottom: 45px;
+                @media all and (max-width: 1024px){
+                    width: calc(100% - 160px);
+                }
+                @media all and (max-width: 450px){
+                    width: calc(100% - 100px);
+                }
                 h2{
                     font-family: $russo;
                     font-size: 40px;
                     line-height: 44px;
                     margin-bottom: 30px;
+                    display: flex;
+                    align-items: center;
+                    @media all and (max-width: 1024px){
+                        font-size: 36px;
+                        line-height: 39px;
+                    }
+                    @media all and (max-width: 765px) {
+                        font-size: 33px;
+                    }
+                    @media all and (max-width: 450px){
+                        font-size: 30px;
+                        line-height: 33px;
+                    }
                 }
                 p{
                     color: $yellow;
                     font-size: 28px;
+                    letter-spacing: 2%;
+                    @media all and (max-width: 1024px){
+                        font-size: 25px;
+                    }
+                    @media all and (max-width: 765px) {
+                        font-size: 22px;
+                    }
+                    @media all and (max-width: 450px){
+                        font-size: 20px;
+                    }
                     &.ou{
                         margin-bottom: 1em;
                     }
