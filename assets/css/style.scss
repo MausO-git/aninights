@@ -762,6 +762,9 @@ footer{
 //swiper
 #swiper{
     display: flex;
+    @media all and (max-width: 560px){
+        min-height: 50vh;
+    }
     .swiper {
         margin: auto;
         width: 50%;
@@ -769,6 +772,13 @@ footer{
         overflow: visible;
         padding: 0;
         $swipers: swiper_1, swiper_2, swiper_3, swiper_4, swiper_5, swiper_6;
+        @media all and (max-width: 850px){
+            width: 70%;
+        }
+        @media all  and (max-width: 560px){
+            width: 80%;
+            height: 20vh;
+        }
 
         @each $swiper in $swipers{
             .#{$swiper} {
@@ -798,6 +808,10 @@ footer{
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
+            @media all and (max-width: 560px){
+                height: 35px;
+                width: 22.4px;
+            }
             
             &::after {
                 display: none; // Hide default arrow
@@ -807,12 +821,24 @@ footer{
             left: 0;
             transform: translate(calc(-100% - 33px),-50%);
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23ffffff' d='M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L69.3 256 214.6 110.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z'/%3E%3C/svg%3E");
+            @media all and (max-width: 560px){
+                transform: translate(calc(-100% - 15px),-50%);
+            }
+            @media all and (max-width: 415px){
+                transform: translate(calc(-100% - 7px),-50%);
+            }
         }
     
         .swiper-button-next {
             right: 0;
             transform: translate(calc(100% + 33px),-50%);
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3Cpath fill='%23ffffff' d='M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z'/%3E%3C/svg%3E");
+            @media all and (max-width: 560px){
+                transform: translate(calc(100% + 15px),-50%);
+            }
+            @media all and (max-width: 415px){
+                transform: translate(calc(100% + 7px),-50%);
+            }
         }
     
         
@@ -825,6 +851,7 @@ footer{
                 opacity: 1;
                 width: 15px;
                 height: 15px;
+                margin: 0 10px;
             }
             .swiper-pagination-bullet-active {
                 background-color: #000;

@@ -83,5 +83,10 @@ const anime = ()=>{
         sho.style.transform = `translate(100%,-45%)`
     }
 }
+console.log(scrollY)
 
 window.addEventListener('scroll', anime)
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    anime()
+})
