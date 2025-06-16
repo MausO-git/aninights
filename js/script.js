@@ -41,3 +41,47 @@ const countdown = setInterval(() => {
     phrase.classList.add('none')
     }
 }, 1000);
+
+//animation des personnages
+
+//constante ciblant les personnages
+const taki = document.querySelector('.taki')
+const mitsu  = document.querySelector('.mitsu')
+const chi =  document.querySelector('.chi')
+const sho = document.querySelector('.sho')
+
+const info = document.querySelector('.info')
+const infoTop = info.offsetTop
+const infoHeight = info.clientHeight
+const swipe = document.querySelector('.swiper')
+const swipeTop = swipe.offsetTop
+const swipeHeight = swipe.clientHeight
+
+const anime = ()=>{
+    const scrollY = window.scrollY
+    const screenHeight = window.innerHeight
+    const start1 = infoTop - screenHeight
+    const start2 = swipeTop - screenHeight
+
+    if(scrollY >= start1){
+        taki.style.transform = `translate(-100%,25%)`
+        mitsu.style.transform = `translate(100%,25%)`
+    }else{
+        taki.style.transform = ''
+        mitsu.style.transform = ''
+    }
+
+    if((scrollY >= start1+(infoHeight/4))&&(scrollY < start1+infoHeight*3/4)){
+        chi.style.transform = 'translate(0,0)'
+    }else{
+        chi.style.transform = `translate(-100%,25%)`
+    }
+
+    if((scrollY >= start1+infoHeight*3/4) && (scrollY < start2)){
+        sho.style.transform = 'translate(0,-45%)'
+    }else{
+        sho.style.transform = `translate(100%,-45%)`
+    }
+}
+
+window.addEventListener('scroll', anime)
