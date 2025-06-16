@@ -159,21 +159,18 @@
     </div>
     <div class="slide" id="swiper">
         <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper_1"></div>
+                <div class="swiper-slide swiper_2"></div>
+                <div class="swiper-slide swiper_3"></div>
+                <div class="swiper-slide swiper_4"></div>
+                <div class="swiper-slide swiper_5">S</div>
+                <div class="swiper-slide swiper_6"></div>
+            </div>
+            <div class="swiper-button-next swiper-nav"></div>
+            <div class="swiper-button-prev swiper-nav"></div>
+            <div class="swiper-pagination"></div>
+        </div>
     </div>
     <footer>
         <div class="fondu"></div>
@@ -214,6 +211,21 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            cssMode: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            mousewheel: true,
+            keyboard: true,
+        });
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
