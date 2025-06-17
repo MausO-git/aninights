@@ -880,7 +880,7 @@ footer{
         @extend %flex-column;
         font-family: $russo;
         padding-bottom: 30px;
-        @media all and (max-width: 1280px){
+        @media all and (max-width: 1440px){
             width: 90%;
         }
         h1{
@@ -888,6 +888,17 @@ footer{
             line-height: 81px;
             align-self: flex-start;
             margin: 0 50px;
+            @media all and (max-width: 1024px){
+                font-size: 40px;
+            }
+            @media all and (max-width: 630px){
+                font-size: 32px;
+                align-self: center;
+                line-height: 100px;
+            }
+            @media all and (max-width: 400px){
+                font-size: 28px;
+            }
         }
         .list{
             width: 90%;
@@ -899,20 +910,90 @@ footer{
             @media amm and (max-width: 1280px){
                 padding: 15px 50px;
             }
+            @media all and (max-width: 1024px){
+                padding: 15px 25px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px 57px;
+            }
+            @media all and (max-width: 810px){
+                gap: 30px 40px;
+                padding: 15px 20px;
+            }
+            @media all and (max-width: 780px){
+                gap: 30px 30px;
+                padding: 15px 15px;
+            }
+            @media all and (max-width: 690px){
+                gap: 30px 20px;
+            }
+            @media all and (max-width: 660px){
+                gap: 30px 10px;
+            }
+            @media all and (max-width:630px){
+                grid-template-columns: 1fr;
+                padding: 20px 50px;
+            }
+            @media all and (max-width: 520px){
+                padding: 20px 25px;
+            }
+            @media all and (max-width: 460px){
+                padding: 20px 15px;
+            }
+
             .film-card{
                 background-color: $white30;
-                height: calc(50vh - 30px);
+                height: 50vh;
+                text-decoration: none;
+                color: $white;
                 @extend %flex-column;
+                transition: all 0.3s ease-in-out;
                 h2{
                     height: 12.5%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    font-size: 26px;
+                    transition: all 0.3s ease-in-out;
+                    @media all and (max-width: 1265px){
+                        font-size: 24px;
+                    }
+                    @media all and (max-width: 1180px){
+                        font-size: 22px;
+                    }
+                    @media all and (max-width: 1100px){
+                        font-size: 20px;
+                    }
+                    @media all and (max-width: 1024px){
+                        font-size: 26px;
+                    }
+                    @media all and (max-width: 850px){
+                        font-size: 24px;
+                    }
+                    @media all and (max-width: 780px){
+                        font-size: 22px;
+                    }
+                    @media all and (max-width: 690px){
+                        font-size: 20px;
+                    }
+                    @media all and (max-width:630px){
+                        font-size: 28px;
+                    }
+                    @media all and (max-width: 460px){
+                        font-size: 26px;
+                    }
+                    @media all and (max-width: 400px){
+                        font-size: 24px;
+                    }
+                    @media all and (max-width: 370px){
+                        font-size: 22px;
+                    }
                 }
                 .cover{
                     height: 75%;
                 }
-                a{
+                .more{
+                    font-family: $roboto;
+                    font-size: 20px;
                     height: 12.5%;
                     width: 100%;
                     display: flex;
@@ -920,6 +1001,41 @@ footer{
                     align-items: center;
                     text-decoration: none;
                     color: $white;
+                    transition: all 0.3s ease-in-out;
+                    @media all and (max-width: 1265px){
+                        font-size: 18px;
+                    }
+                    @media all and (max-width: 1180px){
+                        font-size: 16px;
+                    }
+                    @media all and (max-width: 1024px){
+                        font-size: 20px;
+                    }
+                    @media all and (max-width: 850px){
+                        font-size: 18px;
+                    }
+                    @media all and (max-width: 780px){
+                        font-size: 16px;
+                    }
+                    @media all and (max-width:630px){
+                        font-size: 24px;
+                    }
+                    @media all and (max-width: 460px){
+                        font-size: 22px;
+                    }
+                    @media all and (max-width: 400px){
+                        font-size: 20px;
+                    }
+                }
+                &:hover{
+                    background-color: $bgc;
+                    transform: scale(1.02);
+                    h2{
+                        color: $yellow;
+                    }
+                    .more{
+                        color: $yellow;
+                    }
                 }
             }
         }
