@@ -8,6 +8,7 @@ $yellow: #FFD267;
 $roboto: "Roboto", sans-serif;
 $russo: "Russo One", sans-serif;
 $white: white;
+$white30: rgba(255, 255, 255, 0.3);
 %flex-column{
     display: flex;
     flex-direction: column;
@@ -866,4 +867,62 @@ footer{
         }
     }
     
+}
+
+//liste de films
+#list{
+    background-color: $bgc;
+    position: relative;
+    padding: 110px 0;
+    .wrapper{
+        width: 80%;
+        background-color: $white30;
+        @extend %flex-column;
+        font-family: $russo;
+        padding-bottom: 30px;
+        @media all and (max-width: 1280px){
+            width: 90%;
+        }
+        h1{
+            font-size: 48px;
+            line-height: 81px;
+            align-self: flex-start;
+            margin: 0 50px;
+        }
+        .list{
+            width: 90%;
+            background-color: rgba(46, 58, 89, 0.5);
+            padding: 25px 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px 20px;
+            @media amm and (max-width: 1280px){
+                padding: 15px 50px;
+            }
+            .film-card{
+                background-color: $white30;
+                height: calc(50vh - 30px);
+                @extend %flex-column;
+                h2{
+                    height: 12.5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .cover{
+                    height: 75%;
+                }
+                a{
+                    height: 12.5%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    color: $white;
+                }
+            }
+        }
+    }
+
 }
