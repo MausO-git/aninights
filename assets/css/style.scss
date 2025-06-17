@@ -394,7 +394,7 @@ footer{
             }
         }
         &.chi, &.sho{
-            @media all and (max-width: 460px){
+            @media all and (max-width: 765px){
                 display: none;
             }
         }
@@ -412,6 +412,9 @@ footer{
 
     .chi{
         transform: translate(-100%,50%);
+        @media all and (max-width: 980px){
+            width: 25%;
+        }
     }
 
     .sho{
@@ -419,6 +422,9 @@ footer{
         top: 50%;
         right: 0;
         transform: translate(100%, -45%);
+        @media all and (max-width: 1280px){
+            width: 20%;
+        }
     }
 
 }
