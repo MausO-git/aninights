@@ -666,7 +666,7 @@ footer{
     }
 }
 
-//paruie info de la page home
+//partie info de la page home
 #infos{
     .info{
         width: 60%;
@@ -1110,6 +1110,9 @@ footer{
                 gap: 0;
                 padding: 0 20px;
             }
+
+            //affiche du film
+
             .filmsCover{
                 height: 100%;
                 @media all and (max-width: 605px){
@@ -1124,6 +1127,9 @@ footer{
                 }
                 
             }
+
+            //détails et infos sur le film
+
             .filmsDetails{
                 @extend %flex-column-start;
                 justify-content: space-between;
@@ -1172,7 +1178,8 @@ footer{
                 }
                 .resume{
                         height: 200px;
-                        overflow: scroll;
+                        overflow-y: auto;     /* Affiche toujours la scrollbar verticale */
+                        overflow-x: hidden;     /* Masque totalement le scroll horizontal */
                         display: flex;
                         align-items: center;
                         font-size: 18px;
@@ -1346,9 +1353,13 @@ footer{
                     }
                 }
         }
+
+        //bande annonce du film
+
         .ba{
             width: 100%;
             @extend %flex-center;
+            margin-bottom: 50px;
             .video-frame{
                 width: 55%;
                 aspect-ratio: 16 / 9;
