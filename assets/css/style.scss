@@ -472,7 +472,7 @@ footer{
 //contenu de la page home
 @keyframes goMiddle {
     0%{
-        transform: translate(0,-80vh);
+        transform: translate(0,-100%);
     }
     100%{
         transform: translate(0, 0);
@@ -484,7 +484,7 @@ footer{
         font-family: $russo;
         width: 60%;
         padding-top: 180px;
-        transform: translate(0,-80vh);
+        transform: translate(0,-100%);
         animation-name: goMiddle;
         animation-delay: 1s;
         animation-duration: 1.65s;
@@ -1482,13 +1482,19 @@ footer{
                     &.otherBg{
                         background-color: $upwhite10;
                     }
-                    .price, .counter{
+                    .tType, .price, .counter{
+                        flex: 1;
                         display: flex;
+                    }
+                    .tType{
+                        justify-content: flex-start;
                     }
                     .price{
                         gap: 6px;
+                        justify-content: center;
                     }
                     .counter{
+                        justify-content: flex-end;
                         gap: 15px;
                         button, .count{
                             border: 1px solid black;
@@ -1500,12 +1506,50 @@ footer{
                             height: 30px;
                             border-radius: 5px;
                             cursor: pointer;
+                            font-family: $roboto;
+                            font-size: 20px;
+                            font-weight: 500;
+                            @extend %flex-center;
+                            svg{
+                                width: 18px;
+                            }
                         }
                         .count{
                             height: 30px;
                             width: 44px;
                             border-radius: 5px;
                             @extend %flex-center;
+                        }
+                    }
+                }
+                .cost{
+                    width: 100%;
+                    padding: 0 20px;
+                    height: calc(100% - (3*97px));
+                    @extend %flex-spaceB;
+                    font-size: 20px;
+                    font-weight: 500;
+                    .total, .sum, .payment{
+                        flex: 1;
+                        display: flex;
+                    }
+                    .sum{
+                        gap: 6px;
+                        justify-content: center;
+                    }
+                    .payment{
+                        justify-content: flex-end;
+                        button{
+                            width: 131px;
+                            height: 44px;
+                            cursor: pointer;
+                            font-family: $roboto;
+                            font-size: 24px;
+                            font-weight: bold;
+                            border-radius: 10px;
+                            color: $yellow;
+                            background-color: black;
+                            border: 0;
                         }
                     }
                 }
