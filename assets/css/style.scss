@@ -11,6 +11,7 @@ $roboto: "Roboto", sans-serif;
 $russo: "Russo One", sans-serif;
 $white: white;
 $white30: rgba(255, 255, 255, 0.3);
+$upwhite10: rgba(217, 217, 217, 0.1);
 %flex-column{
     display: flex;
     flex-direction: column;
@@ -28,6 +29,12 @@ $white30: rgba(255, 255, 255, 0.3);
     justify-content: center;
     align-items: center;
 }
+%flex-spaceB{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 *{
     margin: 0;
@@ -38,7 +45,6 @@ $white30: rgba(255, 255, 255, 0.3);
 body{
     font-family: $roboto;
     color: $white;
-    background-color: $bgc;
 }
 
 .slide{
@@ -461,9 +467,6 @@ footer{
     @media all and (max-width: 450px){
         height: 50px;
     }
-    &.details{
-        background-color: $bgc;
-    }
 }
 
 //contenu de la page home
@@ -520,6 +523,7 @@ footer{
             
             h4{
                 font-size: 24px;
+                font-weight: normal;
                 @media all and (max-width: 950px){
                     font-size: 22px;
                 }
@@ -532,6 +536,7 @@ footer{
             }
             h1{
                 font-size: 48px;
+                font-weight: normal;
                 @media all and (max-width: 1130px){
                     font-size: 40px;
                 }
@@ -548,6 +553,7 @@ footer{
             }
             h3{
                 font-size: 26px;
+                font-weight: normal;
                 @media all and (max-width: 950px){
                     font-size: 24px;
                 }
@@ -596,6 +602,7 @@ footer{
         .date{
             font-size: 40px;
             line-height: 50px;
+            font-weight: normal;
             color: $yellow;
             text-shadow: $textBorder;
             filter: drop-shadow(0 0 3px $yellow);
@@ -626,6 +633,7 @@ footer{
     
             h4{
                 font-size: 20px;
+                font-weight: normal;
                 text-align: center;
                 &.none{
                     display: none;
@@ -685,6 +693,7 @@ footer{
             width: 100%;
             text-align: center;
             font-size: 48px;
+            font-weight: normal;
             line-height: 58px;
             filter: drop-shadow(0 0 3px $white);
             @media all and (max-width: 1024px){
@@ -735,6 +744,7 @@ footer{
                 h2{
                     font-family: $russo;
                     font-size: 40px;
+                    font-weight: normal;
                     line-height: 44px;
                     margin-bottom: 30px;
                     display: flex;
@@ -902,6 +912,7 @@ footer{
         h1{
             font-size: 48px;
             line-height: 81px;
+            font-weight: normal;
             align-self: flex-start;
             margin: 0 50px;
             @media all and (max-width: 1024px){
@@ -973,6 +984,7 @@ footer{
                     height: 12.5%;
                     @extend %flex-center;
                     font-size: 26px;
+                    font-weight: normal;
                     transition: all 0.3s ease-in-out;
                     @media all and (max-width: 1265px){
                         font-size: 24px;
@@ -1068,17 +1080,18 @@ footer{
         overflow: hidden;
         width: 90%;
         padding-top: 90px;
-        margin-bottom: 10px;
         .title{
             font-family: $russo;
             margin-bottom: 40px;
             h1{
                 font-size: 48px;
                 line-height: 58px;
+                font-weight: normal;
             }
             h4{
                 font-size: 24px;
                 line-height: 29px;
+                font-weight: normal;
             }
         }
         #filmsDetails{
@@ -1271,6 +1284,7 @@ footer{
                 font-family: $russo;
                 font-size: 40px;
                 line-height: 48px;
+                font-weight: normal;
                 @media all and (max-width: 1024px){
                     font-size: 36px;
                     line-height: 43px;
@@ -1297,6 +1311,7 @@ footer{
                         height: 50px;
                         text-decoration: none;
                         color: $white;
+                        transition: all 0.5s ease-in-out;
                         @media all and (max-width: 705px){
                             height: 60px;
                         }
@@ -1385,6 +1400,114 @@ footer{
                     left: 0;
                     width: 100%;
                     height: 100%;
+                }
+            }
+        }
+    }
+}
+
+//partie sur la vente de billets
+
+#tickets{
+    background-color: $bgc;
+    overflow: hidden;
+    .wrapper{
+        width: 80%;
+        height: 80vh;
+        background-color: $white30;
+        margin-top: 110px;
+        @extend %flex-column-start;
+        h1{
+            font-size: 48px;
+            font-family: $russo;
+            line-height: 100px;
+            padding: 0 30px;
+            font-weight: normal;
+        }
+        .tickets{
+            display: flex;
+            width: 100%;
+            flex: 1;
+            .pres{
+                width: 50%;
+                border-right: 1px solid $white;
+                @extend %flex-column;
+                .filmCover{
+                    width: min(45%, 280px);
+                    img{
+                        width: 100%;
+                    }
+                }
+                .details{
+                    flex: 1;
+                    padding-top: 20px;
+                    @extend %flex-column;
+                    width: 100%;
+                    > div{
+                        width: calc(100% - 100px);
+                        height: 57px;
+                        font-size: 24px;
+                        font-weight: 500;
+                        @extend %flex-center;
+                        &.bordb{
+                            border-bottom: solid 1px $white;
+                        }
+                        &.vers{
+                            div{
+                                font-size: 20px;
+                                font-weight: 400;
+                                background-color: $marineBlue;
+                                @extend %flex-center;
+                                height: 41px;
+                                width: 95px;
+                                border-radius: 10px;
+                            }
+                        }
+                        &.dateTime{
+                            justify-content: space-between;
+                            padding: 0 33px;
+                        }
+                    }
+                }
+            }
+            .pay{
+                width: 50%;
+                .tarif{
+                    width: 100%;
+                    padding: 0 20px;
+                    height: 97px;
+                    @extend %flex-spaceB;
+                    font-size: 20px;
+                    font-weight: 500;
+                    &.otherBg{
+                        background-color: $upwhite10;
+                    }
+                    .price, .counter{
+                        display: flex;
+                    }
+                    .price{
+                        gap: 6px;
+                    }
+                    .counter{
+                        gap: 15px;
+                        button, .count{
+                            border: 1px solid black;
+                            background-color: $white;
+                            color: black;
+                        }
+                        button{
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        }
+                        .count{
+                            height: 30px;
+                            width: 44px;
+                            border-radius: 5px;
+                            @extend %flex-center;
+                        }
+                    }
                 }
             }
         }
