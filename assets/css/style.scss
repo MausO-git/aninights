@@ -1413,35 +1413,64 @@ footer{
     overflow: hidden;
     .wrapper{
         width: 80%;
-        height: 80vh;
+        min-height: 80vh;
         background-color: $white30;
         margin-top: 110px;
         @extend %flex-column-start;
+        @media all and (max-width: 600px){
+            height: fit-content;
+        }
         h1{
             font-size: 48px;
             font-family: $russo;
             line-height: 100px;
             padding: 0 30px;
             font-weight: normal;
+            width: 100%;
+            @media all and (max-width: 1120px){
+                line-height: 92px;
+                font-size: 40px;
+                padding: 0 24px;
+            }
+            @media all and (max-width: 600px){
+                line-height: 100px;
+                font-size: 32px;
+                text-align: center;
+            }
         }
         .tickets{
             display: flex;
             width: 100%;
             flex: 1;
+            @media all and (max-width: 600px){
+                flex-direction: column;
+            }
             .pres{
                 width: 50%;
                 border-right: 1px solid $white;
                 @extend %flex-column;
+                @media all and (max-width: 600px){
+                    width: 100%;
+                    border-right: none;
+                    border-bottom: 1px solid $white;
+                }
                 .filmCover{
-                    width: min(45%, 280px);
+                    width: min(45%, 310px);
+                    @media all and (max-width: 1120px){
+                        width: min(53%, 250px);
+                    }
+                    @media all and (max-width: 840px){
+                        width: 60%;
+                    }
                     img{
                         width: 100%;
                     }
                 }
                 .details{
                     flex: 1;
-                    padding-top: 20px;
+                    // padding-top: 20px;
                     @extend %flex-column;
+                    justify-content: center;
                     width: 100%;
                     > div{
                         width: calc(100% - 100px);
@@ -1449,6 +1478,24 @@ footer{
                         font-size: 24px;
                         font-weight: 500;
                         @extend %flex-center;
+                        @media all and (max-width: 1120px){
+                            font-size: 20px;
+                            width: calc(100% - 40px);
+                        }
+                        @media all and (max-width: 840px){
+                            font-size: 18px;
+                        }
+                        @media all and (max-width: 700px){
+                            font-size: 16px;
+                        }
+                        @media all and (max-width: 600px){
+                            font-size: 20px;
+                            width: 100%;
+                            padding: 42px 0;
+                        }
+                        @media all and (max-width: 340px){
+                            font-size: 18px;
+                        }
                         &.bordb{
                             border-bottom: solid 1px $white;
                         }
@@ -1461,17 +1508,47 @@ footer{
                                 height: 41px;
                                 width: 95px;
                                 border-radius: 10px;
+                                @media all and (max-width: 1120px){
+                                    font-size: 18px;
+                                }
+                                @media all and (max-width: 840px){
+                                    font-size: 16px;
+                                }
+                                @media all and (max-width: 600px){
+                                    font-size: 20px;
+                                }
                             }
                         }
                         &.dateTime{
                             justify-content: space-between;
                             padding: 0 33px;
+                            @media all and (max-width: 1120px){
+                                padding: 0 30px;
+                            }
+                            @media all and (max-width: 780px){
+                                padding: 0 15px;
+                            }
+                            @media all and (max-width: 700px){
+                                padding: 0;
+                            }
+                            @media all and (max-width: 600px){
+                                padding: 0 45px;
+                            }
+                            @media all and (max-width: 450px){
+                                padding: 0 30px;
+                            }
+                            @media all and (max-width: 370px){
+                                padding: 0 15px;
+                            }
                         }
                     }
                 }
             }
             .pay{
                 width: 50%;
+                @media all and (max-width: 600px){
+                    width: 100%;
+                }
                 .tarif{
                     width: 100%;
                     padding: 0 20px;
@@ -1479,6 +1556,19 @@ footer{
                     @extend %flex-spaceB;
                     font-size: 20px;
                     font-weight: 500;
+                    @media all and (max-width: 750px){
+                        font-size: 18px;
+                    }
+                    @media all and (max-width: 640px){
+                        padding: 0 10px;
+                    }
+                    @media all and (max-width: 600px){
+                        font-size: 20px;
+                        padding: 0 15px;
+                    }
+                    @media all and (max-width: 350px){
+                        font-size: 18px;
+                    }
                     &.otherBg{
                         background-color: $upwhite10;
                     }
@@ -1488,6 +1578,7 @@ footer{
                     }
                     .tType{
                         justify-content: flex-start;
+                        text-align: center;
                     }
                     .price{
                         gap: 6px;
@@ -1495,7 +1586,11 @@ footer{
                     }
                     .counter{
                         justify-content: flex-end;
+                        align-items: center;
                         gap: 15px;
+                        @media all and (max-width: 1120px){
+                            gap: 3px;
+                        }
                         button, .count{
                             border: 1px solid black;
                             background-color: $white;
@@ -1510,8 +1605,22 @@ footer{
                             font-size: 20px;
                             font-weight: 500;
                             @extend %flex-center;
+                            @media all and (max-width: 1120px){
+                                width: 27px;
+                                height: 27px;
+                            }
+                            @media all and (max-width: 700px){
+                                width: 24px;
+                                height: 24px;
+                            }
                             svg{
                                 width: 18px;
+                                @media all and (max-width: 1120px){
+                                    width: 16px;
+                                }
+                                @media all and (max-width: 700px){
+                                    width: 14px;
+                                }
                             }
                         }
                         .count{
@@ -1519,6 +1628,16 @@ footer{
                             width: 44px;
                             border-radius: 5px;
                             @extend %flex-center;
+                            @media all and (max-width: 1120px){
+                                width: 42px;
+                                border-radius: 10px;
+                            }
+                            @media all and (max-width: 700px){
+                                width: 35px;
+                            }
+                            @media all and (max-width: 600px){
+                                width: 40px;
+                            }
                         }
                     }
                 }
@@ -1529,9 +1648,24 @@ footer{
                     @extend %flex-spaceB;
                     font-size: 20px;
                     font-weight: 500;
+                    @media all and (max-width: 700px){
+                        font-size: 18px;
+                    }
+                    @media all and (max-width: 600px){
+                        font-size: 20px;
+                        height: 260px;
+                        padding: 0 15px;
+                    }
+                    @media all and (max-width: 350px){
+                        font-size: 18px;
+                    }
                     .total, .sum, .payment{
                         flex: 1;
                         display: flex;
+                    }
+                    .total{
+                        text-align: center;
+                        
                     }
                     .sum{
                         gap: 6px;
@@ -1539,6 +1673,7 @@ footer{
                     }
                     .payment{
                         justify-content: flex-end;
+                        text-decoration: none;
                         button{
                             width: 131px;
                             height: 44px;
@@ -1550,6 +1685,19 @@ footer{
                             color: $yellow;
                             background-color: black;
                             border: 0;
+                            @media all and (max-width: 1120px){
+                                width: 95px;
+                            }
+                            @media all and (max-width: 700px){
+                                font-size: 20px;
+                                width: 80px;
+                                height: 38px;
+                            }
+                            @media all and (max-width: 600px){
+                                width: 86px;
+                                height: 44px;
+                                font-size: 24px;
+                            }
                         }
                     }
                 }
