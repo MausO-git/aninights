@@ -49,14 +49,23 @@ counters.forEach((counter, x)=>{
 })
 //ajoute une margin en bas de la zone des tickets si elle dépasse 80% de la hauteur de l'écran
 const zone = document.querySelector('.slide .wrapper')
-console.log(zone)
+const parent = zone.parentElement
 const addMargin = ()=>{
     const zoneHeight = zone.clientHeight
     const screenHeight = window.innerHeight
-    if(zoneHeight > screenHeight*0.8){
-        zone.style.marginBottom = `50px`
-    }else{
-        zone.style.marginBottom = '0'
+    if(parent.id == 'tickets'){
+        if(zoneHeight > screenHeight*0.8){
+            zone.style.marginBottom = `50px`
+        }else{
+            zone.style.marginBottom = '0'
+        }
+    }
+    if(parent.id == 'contact'){
+        if(zoneHeight > screenHeight*0.6){
+            zone.style.marginBottom = `50px`
+        }else{
+            zone.style.marginBottom = '0'
+        }
     }
 }
 window.addEventListener('resize', addMargin)

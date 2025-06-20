@@ -1128,6 +1128,10 @@ footer{
 
             .filmsCover{
                 height: 100%;
+                align-self: center;
+                @media all and (max-width: 1500px){
+                   height: min(100%, 390px); 
+                }
                 @media all and (max-width: 605px){
                     height: fit-content;
                     padding: 35px 0;
@@ -1727,6 +1731,9 @@ footer{
               font-family: $russo;
               padding-bottom: 30px;
             }
+        }
+        .form{
+            border-right: 1px solid $white;
             form{
                 width: 100%;
                 @extend %flex-column-start;
@@ -1739,6 +1746,9 @@ footer{
                         font-size: 28px;
                         line-height: 28px;
                         width: 100%;
+                        &:focus{
+                            outline: none;
+                        }
                     }
                     input{
                         border-bottom: 1px solid $white;
@@ -1777,8 +1787,33 @@ footer{
                 }
             }
         }
-        .form{
-            border-right: 1px solid $white;
+        .ourContact{
+            @extend %flex-column-start;
+            .contact{
+                @extend %flex-column-start;
+                justify-content: center;
+                gap: 80px;
+                flex: 1;
+                .contact-item{
+                    display: flex;
+                    align-items: center;
+                    gap: 50px;
+                    font-size: 24px;
+                    svg{
+                        width: 28px;
+                    }
+                }
+            }
+            .socialNetwork{
+                padding: 50px 0;
+                width: 100%;
+                @extend %flex-center;
+                gap: 20px;
+                svg{
+                    fill: $white;
+                    height: 28px;
+                }
+            }
         }
     }
 }
