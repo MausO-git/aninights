@@ -17,3 +17,32 @@ progs.forEach(prog=>{
         prog.classList.toggle('open')
     })
 })
+
+
+//scroll auto
+
+// const filminfos = document.querySelectorAll('.films-infos')
+// let dir = 1
+// const speed = 2
+// const pauseDuration = 2000
+// let nextDir
+
+// filminfos.forEach(filminfo=>{
+//     setInterval(()=>{
+//         if(dir !== 0){
+//             filminfo.scrollLeft += dir*speed
+    
+//             const maxScroll = filminfo.scrollWidth - filminfo.clientWidth
+    
+//             if(filminfo.scrollLeft >= maxScroll || filminfo.scrollLeft <= 0){
+//                 nextDir = (filminfo.scrollLeft <= 0) ? 1 : -1
+//                 dir = 0
+
+//                 setTimeout(() => {
+//                     dir = nextDir
+//                 }, pauseDuration);
+//             }
+             
+//         }
+//     }, 40)
+// })

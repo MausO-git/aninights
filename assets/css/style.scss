@@ -1933,6 +1933,9 @@ footer{
         @media all and (max-width: 1600px){
             width: 80%;
         }
+        @media all and (max-width: 600px){
+            width: 90%;
+        }
         .prog{
             font-family: $russo;
             width: 100%;
@@ -1943,11 +1946,23 @@ footer{
             border: 1px solid black;
             overflow: hidden;
             transition: all 0.3s;
+            @media all and (max-width: 1024px){
+                height: 85px;
+            }
+            @media all and (max-width: 600px){
+                height: 70px;
+            }
             &.dim{
                 margin-bottom: 60px;
             }
             &.open{
                 height: 690px;
+                @media all and (max-width: 1024px){
+                height: 575px;
+                }
+                @media all and (max-width: 600px){
+                    height: 700px;
+                }
             }
             .day{
                 width: 100%;
@@ -1956,18 +1971,37 @@ footer{
                 background-color: #3C6E71;
                 @extend %flex-center;
                 border: 1px solid black;
-                
                 cursor: pointer;
+                @media all and (max-width: 1024px){
+                    height: 85px;
+                }
+                @media all and (max-width: 600px){
+                    height: 70px;
+                }
                 h1{
                     user-select: none;
                     font-size: 40px;
                     font-weight: 400;
+                    @media all and (max-width: 1160px){
+                        font-size: 32px;
+                    }
+                    @media all and (max-width: 730px){
+                        font-size: 28px;
+                    }
                 }
             }
             .prog-content{
                 height: 590px;
                 width: 100%;
                 padding: 0 30px 0 calc(30px + 0.5*62.59px);
+                @media all and (max-width: 1024px){
+                    height: 490px;
+                    padding: 0 30px 0 calc(30px + 0.5*50px);
+                }
+                @media all and (max-width: 600px){
+                    height: 630px;
+                    padding: 0 10px 0 calc(10px + 0.5*50px);
+                }
                 .bloc{
                     width: 100%;
                     height: 100%;
@@ -1978,7 +2012,7 @@ footer{
                     grid-template-rows: repeat(4, 1fr);
                     gap: 30px;
                     .prog-films{
-                        width: 100%;
+                        min-width: 100%;
                         height: 110px;
                         border: 1px solid black;
                         position: relative;
@@ -1990,6 +2024,21 @@ footer{
                         font-size: 20px;
                         text-decoration: none;
                         transition: all 0.2s;
+                        @media all and (max-width: 1160px){
+                            font-size: 16px;
+                        }
+                        @media all and (max-width: 1024px){
+                            height: 85px;
+                        }
+                        @media all and (max-width: 730px){
+                            font-size: 14px;
+                        }
+                        @media all and (max-width: 600px){
+                            height: 120px;
+                        }
+                        @media all and (max-width: 400px){
+                            font-size: 12px;
+                        }
                         .circle{
                             width: 62.59px;
                             height: 62.59px;
@@ -1999,16 +2048,44 @@ footer{
                             background-color: $white;
                             position: absolute;
                             transform: translateX(-50%);
+                            @media all and (max-width: 1024px){
+                                width: 50px;
+                                height: 50px;
+                                font-size: 14px;
+                            }
                         }
                         .films-infos{
                             width: 100%;
                             display: flex;
+                            flex-wrap: wrap;
                             align-items: center;
                             justify-content: space-between;
                             padding:0 calc(0.5*62.59px + 40px);
+                            overflow: hidden;
+                            @media all and (max-width: 1600px){
+                                padding:0 calc(0.5*62.59px + 30px);
+                            }
+                            @media all and (max-width: 1280px){
+                                padding: 0 calc(0.5*62.59px);
+                            }
+                            @media all and (max-width: 680px){
+                                gap: 10px;
+                                height: 100%;
+                                border-radius: 30px;
+                            }
+                            @media all and (max-width: 600px){
+                                display: grid;
+                                grid-template-columns: 1fr 1fr 1fr;
+                                grid-template-rows: 1fr 1fr;
+
+                            }
                             div{
                                 flex: 1;
                                 text-align: center;
+                                &.more-info{
+                                        grid-column: 3 / 3; /* à droite de l'autre */
+                                        grid-row: 2;
+                                    }
                             }
                         }
                         &:hover{
@@ -2017,6 +2094,7 @@ footer{
                             .circle{
                                 background-color: $yellow;
                                 text-shadow: #A8C66C 0px 0px 2px;
+                                border: 1px solid #64CCC5;
                             }
                             .more-info{
                                 color: $yellow;
