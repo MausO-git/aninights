@@ -1867,6 +1867,10 @@ footer{
         }
         //email tel et résaux sociaux
         .ourContact{
+            a{
+                text-decoration: none;
+                color: $white;
+            }
             @extend %flex-column-start;
             @media all and (max-width: 600px){
                 h1{
