@@ -934,7 +934,7 @@ footer{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px 20px;
-            @media amm and (max-width: 1280px){
+            @media all and (max-width: 1280px){
                 padding: 15px 50px;
             }
             @media all and (max-width: 1120px){
@@ -979,6 +979,7 @@ footer{
                 text-decoration: none;
                 color: $white;
                 @extend %flex-column;
+                justify-content: space-between;
                 transition: all 0.3s ease-in-out;
                 h2{
                     height: 12.5%;
@@ -1022,6 +1023,9 @@ footer{
                 }
                 .cover{
                     height: 75%;
+                    @media all and (max-width: 768px){
+                        height: min(75%, 320px);
+                    }
                 }
                 .more{
                     font-family: $roboto;
