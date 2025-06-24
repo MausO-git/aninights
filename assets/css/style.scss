@@ -1023,6 +1023,9 @@ footer{
                 }
                 .cover{
                     height: 75%;
+                    @media all and (max-width: 1200px){
+                        height: min(75%, 370px);
+                    }
                     @media all and (max-width: 768px){
                         height: min(75%, 320px);
                     }
